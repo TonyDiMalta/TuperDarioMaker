@@ -37,9 +37,13 @@ Makefile*
 # QtCtreator CMake
 CMakeLists.txt.user
 
+# Custom
 android/
 assets/
 ios/
+levels/
+config.*
+*.qrc
 
 # =========================
 # Operating System Files
