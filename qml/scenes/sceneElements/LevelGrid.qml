@@ -90,7 +90,7 @@ Item {
 
     // font family and size
     font.family: marioFont.name
-    font.pixelSize: 40
+    font.pixelSize: sp(24)
 
     // text color
     color: "#fff833"

@@ -96,10 +96,7 @@ Item {
     anchors.margins: 5
     anchors.bottomMargin: 0
 
-    // make font size dynamic
-    fontSizeMode: Text.Fit
-    font.pixelSize: 13
-    minimumPixelSize: 8
+    font.pixelSize: sp(16)
   }
 
   // user name
@@ -119,7 +116,7 @@ Item {
     anchors.margins: 5
     anchors.topMargin: 0
 
-    font.pixelSize: 8
+    font.pixelSize: sp(14)
   }
 
   MultiResolutionImage {
@@ -150,7 +147,7 @@ Item {
 
     verticalAlignment: Text.AlignVCenter
 
-    font.pixelSize: 10
+    font.pixelSize: sp(16)
 
     text: {
       // if rating exists, round it and set it as text
@@ -193,7 +190,7 @@ Item {
 
     verticalAlignment: Text.AlignVCenter
 
-    font.pixelSize: 10
+    font.pixelSize: sp(16)
 
     text: modelData["times_downloaded"] ? modelData["times_downloaded"] : "0"
   }

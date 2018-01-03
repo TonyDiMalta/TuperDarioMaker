@@ -13,9 +13,10 @@ DialogBase {
 
   Text {
     anchors.centerIn: parent
-    anchors.verticalCenterOffset: -20
+    anchors.verticalCenterOffset: -40
 
     text: "Finished!"
+    font.pixelSize: sp(24)
 
     color: "white"
   }
@@ -24,13 +25,14 @@ DialogBase {
     anchors.centerIn: parent
 
     text: "Score: " + score
+    font.pixelSize: sp(24)
 
     color: "white"
   }
 
   Text {
     anchors.centerIn: parent
-    anchors.verticalCenterOffset: 20
+    anchors.verticalCenterOffset: 40
 
     // this property holds the current leaderboard
     property var currentLeaderboard: {
@@ -49,6 +51,7 @@ DialogBase {
     // show the user's current highscore and rank
     text: "Your Highscore: " + gameNetwork.userHighscoreForLeaderboard(currentLeaderboard)
           + " (#" + gameNetwork.userPositionForLeaderboard(currentLeaderboard) + ")"
+    font.pixelSize: sp(20)
 
     color: "#80bfff"
 

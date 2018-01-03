@@ -11,6 +11,7 @@ DialogBase {
     anchors.centerIn: parent
 
     text: "Do you really want to unpublish this level?"
+    font.pixelSize: sp(20)
 
     color: "white"
   }

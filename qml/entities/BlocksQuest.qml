@@ -31,7 +31,7 @@ PlatformerEntityBaseDraggable {
     width: image.width
     height: image.height
 
-    running: !inLevelEditingMode && !collected && gameScene.state !== "dead"
+    running: !inLevelEditingMode && !collected && (gameScene.state === "play" || gameScene.state === "test")
     visible: !inLevelEditingMode && !collected
 
     // animate the question mark rotation

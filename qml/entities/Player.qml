@@ -156,14 +156,16 @@ PlatformerEntityBaseDraggable {
        id: invincibilityAnim
        anchors.fill: playerAnim
        source: playerAnim
+       visible: invincibilityColor.running
+       opacity: 0.6
        SequentialAnimation on color {
          id: invincibilityColor
          running: false
          loops: Animation.Infinite
-         ColorAnimation { from: "#90ff33cc"; to: "#90ff0000"; duration: 250 }
-         ColorAnimation { from: "#90ff0000"; to: "#90ffff00"; duration: 250 }
-         ColorAnimation { from: "#90ffff00"; to: "#9066ff33"; duration: 250 }
-         ColorAnimation { from: "#9066ff33"; to: "#90ff33cc"; duration: 250 }
+         ColorAnimation { from: "#ff33cc"; to: "#ff0000"; duration: 250 }
+         ColorAnimation { from: "#ff0000"; to: "#ffff00"; duration: 250 }
+         ColorAnimation { from: "#ffff00"; to: "#66ff33"; duration: 250 }
+         ColorAnimation { from: "#66ff33"; to: "#ff33cc"; duration: 250 }
        }
      }
 
@@ -664,7 +666,6 @@ PlatformerEntityBaseDraggable {
     // disable invincibility
     invincible = false
     invincibilityColor.running = false
-    invincibilityAnim.color = "transparent"
 
     audioManager.stopSound("playerInvincible")
 
@@ -766,7 +767,6 @@ PlatformerEntityBaseDraggable {
     // reset invincibility
     invincible = false
     invincibilityColor.running = false
-    invincibilityAnim.color = "transparent"
     invincibilityTimer.stop()
     invincibilityWarningTimer.stop()
     audioManager.stopSound("playerInvincible")

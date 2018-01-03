@@ -41,6 +41,8 @@ Rectangle {
     Text {
       id: textItem
 
+      font.pixelSize: sp(18)
+
       height: parent.height
 
       // center the text vertically

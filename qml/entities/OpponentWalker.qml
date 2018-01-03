@@ -31,7 +31,7 @@ Opponent {
     width: image.width
     height: image.height
 
-    running: !inLevelEditingMode && alive && gameScene.state !== "dead"
+    running: !inLevelEditingMode && alive && (gameScene.state === "play" || gameScene.state === "test")
     visible: !inLevelEditingMode && alive
 
     // mirror anim, when the opponent is moving right

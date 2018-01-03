@@ -11,6 +11,7 @@ DialogBase {
     anchors.topMargin: 100
 
     text: "What do you want to do?"
+    font.pixelSize: sp(20)
 
     color: "white"
   }

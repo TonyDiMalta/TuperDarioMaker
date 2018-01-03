@@ -6,7 +6,7 @@ Item {
 
   // should only be visible and enabled on touch devices, when
   // not in edit mode
-  visible: !system.desktopPlatform && gameScene.state != "edit"
+  visible: !system.desktopPlatform && (gameScene.state == "play" || gameScene.state == "test")
   enabled: visible
 
   // set size

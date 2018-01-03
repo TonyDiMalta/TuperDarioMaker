@@ -43,7 +43,7 @@ ButtonVPlay {
 
     anchors.centerIn: parent
 
-    font.pixelSize: 12
+    font.pixelSize: sp(16)
   }
 
   // this white rectangle covers the button when the mouse hovers above it
