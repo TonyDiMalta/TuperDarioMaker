@@ -81,9 +81,7 @@ SceneBase {
       name: "test"
       PropertyChanges {target: editorOverlay; visible: true} // show the editorOverlay
       PropertyChanges {target: camera; zoom: 1}
-      StateChangeScript {script: stopTimer()}
       StateChangeScript {script: audioManager.handleMusic()}
-      StateChangeScript {script: resetLevel()} // reset all entity positions
     },
     State {
       name: "dead"
@@ -219,6 +217,8 @@ SceneBase {
       // in play mode: display game over
       // in test mode: reset the level
       onFinish: {
+        // keep track of previous state to reload it
+        gameScene.previousState = gameScene.state
         // set state to finish, to freeze the game
         gameScene.state = "finish"
 
@@ -233,6 +233,10 @@ SceneBase {
           // show finish dialog
           finishDialog.score = score
           finishDialog.opacity = 1
+        }
+        else if(!settings.soundEnabled) {
+          gameScene.resetLevel()
+          gameScene.state = gameScene.previousState
         }
       }
     }

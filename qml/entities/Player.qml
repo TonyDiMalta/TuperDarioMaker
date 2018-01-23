@@ -109,8 +109,6 @@ PlatformerEntityBaseDraggable {
       verticalVelocity = maxFallingSpeed
   }
 
-  onFinish: audioManager.playSound("finish")
-
   /**
    * Player animations ----------------------------------------------------
    */
@@ -584,7 +582,10 @@ PlatformerEntityBaseDraggable {
       // set state to dead, to freeze the game
       gameScene.state = "dead"
       // ...die
-      audioManager.playSound("playerDie")
+      if(!settings.soundEnabled) {
+        gameScene.resetLevel()
+        gameScene.state = gameScene.previousState
+      }
     }
     // else if(!dieImmediately && !invincible && isBig)...
     else if(!invincible) {

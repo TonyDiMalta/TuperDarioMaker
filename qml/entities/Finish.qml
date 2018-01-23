@@ -46,8 +46,6 @@ PlatformerEntityBaseDraggable {
       if(otherEntity.entityType === "player") {
         console.debug("Player touches finish")
 
-        // keep track of previous state to reload it
-        gameScene.previousState = gameScene.state
         // ...we emit the player's finish() signal
         gameScene.player.finish()
       }

@@ -191,11 +191,11 @@ Item {
           audioManager.startMusic(editMusic)
           break
         case "dead" :
-          playSound("playerDie")
+          audioManager.playSound("playerDie")
           break
         case "finish" :
-          playSound("finish")
-          playSound("marioTime")
+          audioManager.playSound("finish")
+          audioManager.playSound("marioTime")
           break
         default :
           console.debug("unknown case name:", gameScene.state)
